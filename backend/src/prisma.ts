@@ -1,12 +1,9 @@
-import { PrismaClient } from '@prisma/client';
-import { PrismaSQLite } from '@prisma/adapter-sqlite';
-import Database from 'better-sqlite3';
-import path from 'path';
+// Define o engine type antes de carregar o Prisma, para evitar valores inválidos.
+process.env.PRISMA_CLIENT_ENGINE_TYPE = 'library';
 
-const sqlite = new Database(path.resolve(__dirname, '../prisma/dev.db'));
-const adapter = new PrismaSQLite(sqlite);
+const { PrismaClient } = require('@prisma/client');
 
+// Usa a configuração gerada pelo Prisma (client) e a variável DATABASE_URL em .env
 export const prisma = new PrismaClient({
-  adapter,
   log: ['query', 'info', 'warn', 'error'],
 });
