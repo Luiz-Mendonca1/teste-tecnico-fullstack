@@ -1,8 +1,9 @@
-import dotenv from 'dotenv';
-dotenv.config();
+/// <reference types="node" />
 
 export default {
   datasource: {
-    url: process.env.DATABASE_URL || 'file:./dev.db',
+    db: {
+      url: process.env.DATABASE_URL || 'file:./dev.db',
+    },
   },
 };

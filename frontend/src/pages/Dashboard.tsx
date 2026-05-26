@@ -82,7 +82,7 @@ export default function Dashboard() {
       <header className="bg-slate-900 border-b border-slate-800 p-4 shadow-sm">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold bg-linear-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
               To-Do List
             </h1>
             <p className="text-xs text-slate-400">Olá, {user?.name}</p>
